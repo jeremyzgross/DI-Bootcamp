@@ -38,7 +38,7 @@ basket.clear()
 print(basket)
 
 # Exercise 4: Floats
-a float is a decimal whereas an integers is a whole number
+# a float is a decimal whereas an integers is a whole number
 
 a_list_to_create = [1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
 
