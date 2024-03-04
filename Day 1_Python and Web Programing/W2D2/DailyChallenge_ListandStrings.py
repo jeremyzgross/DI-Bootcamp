@@ -1,14 +1,14 @@
 # 1
-# number = int(input("Feed me a number: "))
-# length = int(input("Feed me a whole number for length: "))
+number = int(input("Feed me a number: "))
+length = int(input("Feed me a whole number for length: "))
 
-# multiples = []
-# base_number = 0
-# for i in range(0,length):
-#     base_number += number
-#     multiples.append(base_number) 
+multiples = []
+base_number = 0
+for i in range(0,length):
+    base_number += number
+    multiples.append(base_number) 
 
-# print(multiples)
+print(multiples)
 
 
 # 2
