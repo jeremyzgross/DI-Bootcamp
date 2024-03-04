@@ -19,7 +19,8 @@ print(First_and_Last)
 
 
 for i in range(1, len(user_string) + 1):
-    print(user_string[:i])
+    print(user_string[:i]) 
+
 
 # ^this one was a steep inclind from what we learned today. But after research I understand what it is doing. 
 # It loops though each character. i becomes the first character and prints then the loop tells it to print i plus the next one until the length of the world is looped through.
