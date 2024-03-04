@@ -1,14 +1,14 @@
 # Exercise 1 : Set
 
-# my_fav_numbers = {420, 22, 6}
-# my_fav_numbers.add(1)
-# my_fav_numbers.add(2)
-# my_fav_numbers.pop()
+my_fav_numbers = {420, 22, 6}
+my_fav_numbers.add(1)
+my_fav_numbers.add(2)
+my_fav_numbers.pop()
 # # RESULTS discard 1
 
-# friends_fav_numbers = {421, 23, 7}
-# our_fav_numbers = my_fav_numbers.union(friends_fav_numbers)
-# print(our_fav_numbers)
+friends_fav_numbers = {421, 23, 7}
+our_fav_numbers = my_fav_numbers.union(friends_fav_numbers)
+print(our_fav_numbers)
 # RESULTS {2, 420, 23, 6, 22, 421, 7}
 
 # Exercise 2: Tuple
