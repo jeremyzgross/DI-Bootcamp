@@ -113,7 +113,7 @@ brand = {'name': 'Zara',
 'country_creation': 'Spain'
 }
 #Print the last international competitor.
-Print(brand['international_competitors'][-1])
+print(brand['international_competitors'][-1])
 # results: Desigual
 
 #  Print the major clothes colors in the US.
