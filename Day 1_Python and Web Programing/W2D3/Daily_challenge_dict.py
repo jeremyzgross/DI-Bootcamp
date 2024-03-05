@@ -9,30 +9,34 @@ print(user_word_dict)
 
 # Challenge 2
 
-
 # Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
 # Sort the list in alphabetical order.
 # Return “Nothing” if you can’t afford anything from the store.
 # The key is the product, the value is the price
-# WORK IN PROGRESS: 
-wallet = "300"
+
+wallet = 100
 items_purchase = {
-  "Water": "$1",
-  "Bread": "$3",
-  "TV": "$1,000",
-  "Fertilizer": "$20"
+  "Apple": "$4",
+  "Honey": "$3",
+  "Fan": "$14",
+  "Bananas": "$4",
+  "Pan": "$100",
+  "Spoon": "$2"
 }
 
-items_purchase_propper = {}
-for value in items_purchase.values():
-    new_value = value.replace('$','')
-    new_value = value.replace(',', '')
-                              
-    items_purchase_propper= value
+items_in_budget = []
+for key, item in items_purchase.items():
+    new_number = ''
+    for char in item:
+        if char != '$' and char != ',':
+            new_number = new_number + char
+    new_number = int(new_number)
+    if new_number >= wallet:
+        print('nothing')
+    else:
+        items_in_budget.append(key)
 
-print(items_purchase_propper)
-
-
+print(items_in_budget)
 
 
 # indented results: ["Bread", "Fertilizer", "Water"]
