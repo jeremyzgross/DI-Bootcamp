@@ -96,4 +96,26 @@ def main():
 
 main() 
 
-# Exercise 8 
+# Exercise 8. THIS ONE I DIDNT HAVE TIME TO FINISH 
+
+data = [
+    {"question": "What is Baby Yoda's real name?",
+     "answer": "Grogu"},
+     {"question": "Where did Obi-Wan take Luke after his birth?", 
+      "answer": "Tatooine"}
+]
+
+def check_answers():
+    number_correct_answers = 0
+    number_incorrect_answers = 0
+    list_wrong_answers = []
+    print("Let's start the Star Wars Game")
+
+check_answers()
+# loop through the data 
+# ask 
+
+
+# def answers_number():
+#     '''prints the number of answers the user got correct and incorrect'''
+#     if 
