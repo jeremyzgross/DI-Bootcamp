@@ -1,5 +1,5 @@
 # THIS ONE I COULD NOT SOLVE IN TIME
-# This is Matrix!
+# Thisis Matrix!
 
 # Given a Matrix string
 
