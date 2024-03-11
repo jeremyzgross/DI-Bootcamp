@@ -28,7 +28,7 @@ def candle_number(age):
 def display_cake():
     age = birthday_age()
     num_candle = candle_number(age)
-    cake = (f'   ___{'i' * num_candle}___\n'
+    cake = (f'   ___{'i' * num_candle}___\n' #displays a candle for the second number in your brithday
     f'  |:H:a:p:p:y:|\n'
     f'__|___________|__\n'
     f'|^^^^^^^^^^^^^^^^^|\n'
