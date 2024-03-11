@@ -1,11 +1,16 @@
-        # for name, age, gender in child.items():
-        #     new_child = {'name': name, 'gender': gender, 'age': age,}
-        #     if new_child not in self.members:
-        #         self.members.append(new_child)
-        #         print(f'Congrats {self.last_name} on {name}!')
+alphabetList = list("abcdefghijklmnopqrstuvwxyz")
+pagesize = 4
+list_of_4 = []
 
+for i in range(pagesize):
+    list_of_4.append(alphabetList[i])
 
-# for member in self.members:
-#             if member["first name"] == name:
-#                 return member['age'] == age
-#                 print('over 18') 
+print(list_of_4)
+
+for i in range(pagesize,(pagesize*2)):
+    list_of_4.append(alphabetList[i])
+
+print(list_of_4[pagesize:])
+
+for i in range(pagesize,(pagesize*2)):
+    list_of_4.append(alphabetList[i])
