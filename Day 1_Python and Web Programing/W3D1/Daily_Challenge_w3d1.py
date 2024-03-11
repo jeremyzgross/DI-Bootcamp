@@ -15,7 +15,7 @@ class Farm():
     def get_info(self):
         print('E-I-E-I-0!')
     
-    def get_animal_types(self):
+    # def get_animal_types(self):
 
 
     
