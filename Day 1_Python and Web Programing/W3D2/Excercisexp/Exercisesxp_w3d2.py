@@ -93,8 +93,8 @@ class Family:
             print(f"congrats {self.last_name} family on {members_dict['name']}'s birth")
 
     
-    def is_18(self, name):
-        #looping members list, looking for the correct member
+
+    def is_18(self,name):
         for member in self.members:
             # if we found the member
             if member['name'] == name:

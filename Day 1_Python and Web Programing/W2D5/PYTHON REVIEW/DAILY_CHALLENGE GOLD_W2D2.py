@@ -15,6 +15,7 @@ def birthday_age():
     month, day, year = map(int, user_birthday.split('/'))
     user_birthday = date(year, month, day)
     today = date.today()
+    print(today)
     age = today.year - user_birthday.year - ((today.month, today.day) < (user_birthday.month, user_birthday.day))
     # print(age)
     return age 
