@@ -16,7 +16,7 @@ class Currency:
     
 
     def __add__(self, other):
-        if isinstance(other, Currency):    
+        if isinstance(other, Currency): #if the other is is an object of the Currency class do this:
             if self.currency == other.currency:
                     return Currency(self.currency, self.amount + other.amount)
             else:
@@ -26,7 +26,7 @@ class Currency:
         
     
     def __iadd__(self, other):
-        if isinstance(other, Currency):
+        if isinstance(other, Currency): #if the other is is an object of the Currency class do this:
             if self.currency == other.currency:
                 self.amount += other.amount
                 return self
@@ -74,7 +74,7 @@ print('c1 + c3')
 print(c1 + c3)
 # # TypeError: Cannot add between Currency type <dollar> and <shekel>
 
-ex3 String Module
+# ex3 String Module
 
 import random
 import string

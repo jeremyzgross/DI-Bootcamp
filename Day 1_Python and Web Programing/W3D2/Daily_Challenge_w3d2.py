@@ -21,7 +21,7 @@ class Pagination:
 
 
 alphabetList = list("abcdefghijklmnopqrstuvwxyz")
-p = Pagination(alphabetList, 4)
+p = Pagination(alphabetList, 7)
 
 p.getVisibleItems()
 p.nextPage()
