@@ -1,10 +1,10 @@
 # Challenge 1
 
-# user_word = input("Feed me a word: ")
-# user_word_dict = {}
-# for index, word in enumerate(user_word):
-#     user_word_dict[word] = index
-# print(user_word_dict) 
+user_word = input("Feed me a word: ")
+user_word_dict = {}
+for index, word in enumerate(user_word):
+    user_word_dict[word] = index
+print(user_word_dict) 
 
 
 # # Challenge 2
@@ -43,37 +43,37 @@
 
 # Review in lecture
 
-items_purchase = {
-  "Water": "$1",
-  "Bread": "$3",
-  "TV": "$1,000",
-  "Fertilizer": "$20"
-}
+# items_purchase = {
+#   "Water": "$1",
+#   "Bread": "$3",
+#   "TV": "$1,000",
+#   "Fertilizer": "$20"
+# }
 
-wallet = "$300"
+# wallet = "$300"
 
-# Review steps in class:
-    # check the price
-    # compare /check if I have enough money for it 
-    # make a varaible where items will go 
-    # add item to variable
-    # subtract the price from my wallet
-    # loop through values (prices)
-clean_items_purchase = {}
-clean_price = ''
-for item, price in items_purchase.items():
-    clean_price = price.replace('$ ', ' ')
-    clean_price = price.replace(', ', ' ')
-    clean_price = int(clean_price)
-    clean_items_purchase.update({item:clean_price})
+# # Review steps in class:
+#     # check the price
+#     # compare /check if I have enough money for it 
+#     # make a varaible where items will go 
+#     # add item to variable
+#     # subtract the price from my wallet
+#     # loop through values (prices)
+# clean_items_purchase = {}
+# clean_price = ''
+# for item, price in items_purchase.items():
+#     clean_price = price.replace('$ ', ' ')
+#     clean_price = price.replace(', ', ' ')
+#     clean_price = int(clean_price)
+#     clean_items_purchase.update({item:clean_price})
 
 
-basket = [] # make a varaible where items will go 
-for item, price in items_purchase.items(): # check the price
-    if price <= wallet: # compare /check if I have enough money for it 
-        basket.append(item)  # add item to variable
-        wallet -= price
-    else:
-        continue
+# basket = [] # make a varaible where items will go 
+# for item, price in items_purchase.items(): # check the price
+#     if price <= wallet: # compare /check if I have enough money for it 
+#         basket.append(item)  # add item to variable
+#         wallet -= price
+#     else:
+#         continue
 
-print(basket)
+# print(basket)
