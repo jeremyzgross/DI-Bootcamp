@@ -44,7 +44,7 @@ class Text:
 # c1 = Text('yes.yes,no, As =as as-')
 c1 = Text(stranger)
 print(c1.most_common())
-# c1 = Text('as as as house if' )
+# c1 = Text('as as as house if' 
 # print(c1.word_frequency())
 # print(c1.word_frequency())
 # print(c1.least_common())
