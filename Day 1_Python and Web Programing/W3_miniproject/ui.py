@@ -2,25 +2,26 @@ from anagram_checker import AnagramChecker
 
 def menu():
     user_input = ''
-    while user_input != '()':
-        user_input = input(f'Feed me a word or type (): ')
+    while user_input != 'exit':
+        user_input = input(f'Feed me a word or type exit: ')
+        if user_input == 'exit' or 'Exit' or 'EXIT':
+            break
         acceptable_word(user_input)
-        break
 
 def acceptable_word(user_input):
-    # user_input_list = user_input.split()
-    # if len(user_input_list) == 1 and user_input.isalpha():
-    #     stringed_input = user_input_list[0]
-    anagram = AnagramChecker('/sowpods.txt')
+    anagram = AnagramChecker('/sowpods.txt') 
     if anagram.validate_word(user_input):
         anagrams = anagram.get_anagram(user_input)
-        print(f'{user_input} has these anagrams {','.join(anagrams)}')
+        print(f'{user_input.upper()} has these anagrams: {','.join(anagrams)}')
+    else:
+        print('not an anagram')
 
 
 
-# show_menu()
-# menu()
-acceptable_word('team')
+
+
+menu()
+
 
 
 
