@@ -4,7 +4,7 @@ def menu():
     user_input = ''
     while user_input != 'exit':
         user_input = input(f'Feed me a word or type exit: ')
-        if user_input == 'exit' or 'Exit' or 'EXIT':
+        if user_input == 'exit':
             break
         acceptable_word(user_input)
 
