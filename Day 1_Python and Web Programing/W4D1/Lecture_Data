@@ -1,0 +1,28 @@
+PostgreSQL - Database management system using SQL language (Structured Query Language)
+
+Relational Database - each table is realated to one another (one table has name of client thier address and another table has their online order)
+
+RDMS - Relational Database management system. Such as MYSQL SQLlite PostgreSQL
+
+PGadmin - software that manages PostgreSQL
+
+Table - table is an object is realted to a key. with recors of rows and columns
+
+Null - blank record in a table 
+
+Field - a column in the table designed to maintain specific information about every record in the table
+
+Record - a row of data consist of individual entry that exists in a table. Example of a record is all the data about a particular CUSTOMER
+
+Column - a vertical entity in a table containing all information associated with a specific field in a table.
+For example, a column in the CUSTOMERS table is ADDRESS, which represents location description and would be as shown below
+
+
+Constraints
+Not Null - Ensure that a column cannot ahv ea null value
+
+Default - Provides a default value for a column when none is specified
+
+Unique - prevents two records from having identical values in a particular column
+
+primary key - uniquely idenf
