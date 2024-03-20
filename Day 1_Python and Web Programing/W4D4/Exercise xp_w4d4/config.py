@@ -1,5 +1,0 @@
-HOSTNAME = 'localhost'
-USERNAME = 'postgres'
-PASSWORD = 'Mycollege1!'
-DATABASE = 'Menu'
-PORT = '5432'
