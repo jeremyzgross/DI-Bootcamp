@@ -1,0 +1,34 @@
+--one to one relationship
+--the primary key of the parent is in FK of the child
+-- CREATE TABLE customer(
+-- customer_id serial Primary key,
+-- 	first_name VARCHAR(50)NOT NULL,
+-- 	last_name VARCHAR(100) NOT NULL
+-- ) 
+
+--child table: The FK = PK from parent
+-- CREATE TABLE customer_profile(
+-- customer_id int not null,
+-- isLoggedIn boolean default false, 
+-- foreign key (customer_id) references customer(customer_id)
+-- )
+
+-- INSERT INTO customer (first_name, last_name)
+-- VALUES
+-- ('John', 'Doe'),
+-- ('Jerome', 'Lalu'),
+-- ('Lea', 'Rive');
+-- part 1 step 3
+-- INSERT INTO customer_profile (customer_id, isLoggedIn)
+-- VALUES 
+-- ((SELECT customer_id FROM customer WHERE customer_id = 1),True),
+
+-- ((SELECT customer_id FROM customer WHERE customer_id = 2), false);
+-- SELECT first_name from customer join customer_profile on customer.customer_id = customer_profile.customer_id where customer_profile.isloggedin = true
+-- -- SELECT * from customer join customer_profile on customer.customer_id = customer_profile.customer_id 
+-- Select * from customer where first_name = 'John'
+-- SELECT first_name, isloggedin from customer join customer_profile on customer.customer_id = customer_profile.customer_id where customer_profile.isloggedin = true
+-- SELECT * from customer join customer_profile on customer.customer_id = customer_profile.customer_id 
+-- Select * from customer where first_name = 'John'
+-- SELECT first_name, isloggedin from customer left join customer_profile on customer.customer_id = customer_profile.customer_id
+-- SELECT count(*) from customer join customer_profile on customer.customer_id = customer_profile.customer_id where customer_profile.isloggedin = false
