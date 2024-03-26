@@ -12,3 +12,21 @@ Use the firstElementChild and the lastElementChild properties to retrieve the fi
 
  */
 
+let navDiv = document.getElementById('navBar')
+
+navDiv.setAttribute('id', 'socialNetworkNavigation')
+
+let newItem = document.createElement('li')
+
+let newText = document.createTextNode('Logout')
+
+newItem.appendChild(newText)
+
+let ul = navDiv.querySelector('ul')
+ul.appendChild(newItem)
+
+let firstItem = ul.firstElementChild
+let lastItem = ul.lastElementChild
+
+console.log(firstItem.textContent)
+console.log(lastItem.textContent)
