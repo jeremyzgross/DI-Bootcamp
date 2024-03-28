@@ -1,0 +1,62 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  border: 5px solid red;
+}
+
+.MainDiv{
+  display: flex;
+  height: 100vh;
+  background-color: #d3d3d3;
+  /* width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+.colorPallete{
+  /* display: flex;
+  justify-content: left;
+  background-color: wheat;
+  width: 33vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0; */
+  width: 33%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.clearButton{
+  /* width: 33vw;
+  padding: 20px;
+  font-size: 20px; */
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: blue
+}
+
+.colorGrid{
+    /* background-color: red;
+    width: 33vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0; */
+    /* flex-grow: 1; */
+  width: 66%;
+  height: 100%;
+  background-color: #fff;
+
+}

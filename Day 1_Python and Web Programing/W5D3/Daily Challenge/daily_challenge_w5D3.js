@@ -12,7 +12,7 @@ Be careful, each planet has a certain amount of moons. How should you display th
 Should you still use an array for the planets ? Or an array of objects ?
 */
 
-const planets = [
+let planets = [
   'Mercury',
   'Venus',
   'Earth',
@@ -23,11 +23,11 @@ const planets = [
   'neptune',
 ]
 
-for (const planet of planets) {
-  const div = document.createElement('div')
+for (let planet of planets) {
+  let div = document.createElement('div')
   div.classList.add('planet')
   div.classList.add(planet.toLowerCase())
 
-  const section = document.querySelector(".listPlanets")
+  let section = document.querySelector('.listPlanets')
   section.appendChild(div)
 }

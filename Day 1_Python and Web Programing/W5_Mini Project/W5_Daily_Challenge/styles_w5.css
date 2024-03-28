@@ -1,0 +1,55 @@
+body{
+  background-color:#F74F5A;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 333px;
+}
+
+div{
+  /* border: 2px solid yellow; */
+}
+.taskForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+h1{
+  font-family: fantasy;
+}
+.container{
+  background-color: white;
+  padding: 50px;
+}
+button {
+  border: none;
+  background-color: transparent;
+  font-family: Arial, sans-serif;
+  color: #66ccff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Close the comment block */
+/* .listTasks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Align items to the start of the cross axis (vertically) */
+
+
+.taskList {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+

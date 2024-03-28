@@ -69,13 +69,18 @@ Loop through the array and as you loop console.log a string like so: “My #1 ch
 */
 
 let colors = ['blue', 'red', 'green', 'pink', 'orange']
+let listSuffix = ['st', 'nd', 'rd', 'th', 'th']
+// for(let color in colors){
+//     let value = colors[color];
+//     let message = `My # ${color} choice is ${value}`
+//     console.log(message);
 
-for(let color in colors){
-    let value = colors[color];
-    let message = `My # ${color} choice is ${value}`
-    console.log(message);
+for (let i =0; i < colors.length; i++){
+    console.log(`My ${i+1}${listSuffix[i]} is ${colors[i]} `);
+}
 
-} //I know this is not the right way but I wasnt sure how else to do
+
+// } //I know this is not the right way but I wasnt sure how else to do
 
 // 3
 /*
@@ -171,7 +176,7 @@ Console.log the name of their secret society. The output should be “ABJKPS” 
 const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 
 const namesSort = names.sort()
-// console.log(namesSort);
+console.log(namesSort);
 
 let secretArray = []
 for (let firstName of namesSort){
