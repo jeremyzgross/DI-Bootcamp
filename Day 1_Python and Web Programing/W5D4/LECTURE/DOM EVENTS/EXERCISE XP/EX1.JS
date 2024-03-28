@@ -35,13 +35,23 @@ headerThree.addEventListener('click', (event) => {
 
 let boldButton = document.getElementById('boldbutton')
 
-let allPar = document.querySelector('p')
+let allPar = document.querySelectorAll('p')
+console.log(allPar)
 
-function makeBold() {
-  allPar.style.fontWeight = 'bold'
+articlePars = document.getElementsByTagName('article')[0].children
+
+function makeBold(elementToMakeBold) {
+  elementToMakeBold.style.fontWeight = 'bold'
 }
-boldButton.onclick = makeBold
-//IT'S ONLY DOING THE FIRST P TAG HMMMM
+
+function boldAllPars(event) {
+  event.preventDefault()
+  for (let i = 0; i < articlePars.length; i++) {
+    makeBold(articlePars[i])
+  }
+}
+
+boldButton.onclick = boldAllPars
 
 //3
 /*
@@ -81,5 +91,3 @@ function returnItemsToDefault() {
 }
 
 returnItemsToDefault()
-
-
