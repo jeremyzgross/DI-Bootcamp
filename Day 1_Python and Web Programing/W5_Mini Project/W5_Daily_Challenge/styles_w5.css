@@ -2,25 +2,43 @@ body{
   background-color:#F74F5A;
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  padding: 333px;
+  flex-direction: column;
+  padding-bottom: 333px;
+  padding-top: 250px;
 }
 
 div{
-  /* border: 2px solid yellow; */
+  /* border: 4px solid purple; */
 }
-.taskForm{
+
+#taskForm{
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  background-color: white;
+  padding: 10px 0px 10px 0px ;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+  input {
+      border-style: none;
+      padding-left: 15px;
+    }
+  input:focus{
+    outline: none;
+  }
+
 }
 
 h1{
   font-family: fantasy;
+  text-align: center;
 }
 .container{
   background-color: white;
-  padding: 50px;
+  /* padding: 50px; */
+  width: 300px;
+  margin: auto;
 }
 button {
   border: none;
@@ -30,22 +48,19 @@ button {
   font-size: 16px;
   cursor: pointer;
   outline: none;
+  text-align: right;
+  padding-right: 15px;
 }
-
-/* Close the comment block */
-/* .listTasks {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* Align items to the start of the cross axis (vertically) */
-
 
 .taskList {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 2px;
   flex-direction: column;
+  /* padding-top: 10px; */
+  padding: 10px 25px 2px 25px;
 }
+
 
 .checkbox {
   display: flex;

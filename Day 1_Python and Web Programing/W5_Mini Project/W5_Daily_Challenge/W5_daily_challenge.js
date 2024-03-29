@@ -16,14 +16,15 @@ function addTask() {
 
   const inputItem = document.createElement('input')
   const labelItem = document.createElement('label')
+  const taskItemContainer = document.createElement('div')
 
   inputItem.setAttribute('type', 'checkbox')
   inputItem.setAttribute('id', toDo)
   labelItem.setAttribute('for', toDo)
-  // labelItem.innerHTML += `<i class="fas fa-times"></i> ${toDo}`
-  labelItem.innerHTML += `<i class="fas fa-times"></i> Hello World`
-  tasksItems.appendChild(inputItem)
-  tasksItems.appendChild(labelItem)
+  labelItem.innerHTML += `<i class="fas fa-times"></i> ${toDo}`
+  taskItemContainer.appendChild(inputItem)
+  taskItemContainer.appendChild(labelItem)
+  tasksItems.appendChild(taskItemContainer)
 
   document.getElementById('taskInput').value = ''
 }
