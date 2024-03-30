@@ -1,0 +1,69 @@
+/* div{
+  border: 4px solid red;
+} */
+
+.board {
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+}
+
+.boardContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.buttoncontainer {
+  display: flex;
+  justify-content: right;
+  /* width: 600px; */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 100px;
+}
+
+.square {
+  font-size: 200px;
+  text-align: center;
+}
+.quad01 {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.quad02 {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.quad03 {
+  border-bottom: 2px solid black;
+}
+
+.quad04 {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.quad05 {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.quad06 {
+  border-bottom: 2px solid black;
+}
+
+.quad07 {
+  border-right: 2px solid black;
+}
+
+.quad08 {
+  border-right: 2px solid black;
+}
+
+.quad09 {
+}
