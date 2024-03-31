@@ -6,14 +6,14 @@ The inner function named addIngredients receives 3 ingredients, and displays on 
 Invoke the inner function ONCE inside the outer function. Then invoke the outer function in the global scope. */
 
 //Part 1
-// function makeJuice(size) {
-//   function addIngredient(firstIng, secondIng, thirdIng) {
-//     return `The client wants a ${size}, container ${firstIng}, ${secondIng}, ${thirdIng}`
-//   }
+function makeJuice(size) {
+  function addIngredient(firstIng, secondIng, thirdIng) {
+    return `The client wants a ${size}, container ${firstIng}, ${secondIng}, ${thirdIng}`
+  }
 
-//   return addIngredient('apple', 'cherry', 'orange')
-// }
-// console.log(makeJuice('large'))
+  return addIngredient('apple', 'cherry', 'orange')
+}
+console.log(makeJuice('large'))
 
 //part 2
 function makeJuice(size) {
@@ -35,4 +35,3 @@ function makeJuice(size) {
 }
 
 console.log(makeJuice('large'))
-

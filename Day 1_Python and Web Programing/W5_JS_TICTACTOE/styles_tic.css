@@ -10,18 +10,18 @@
 
 .boardContainer {
   display: flex;
-  justify-content: center;
 }
 
 .buttoncontainer {
   display: flex;
   justify-content: right;
-  /* width: 600px; */
+  width: 600px;
+  margin-top: 20px;
 }
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   margin: 100px;
 }
 
