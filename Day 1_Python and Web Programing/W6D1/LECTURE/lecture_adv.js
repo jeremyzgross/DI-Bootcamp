@@ -9,7 +9,7 @@ console.log('test')
 
 // console.log(index) //index will log as 5
 
-// for (let i = 0; i < 5; i++) {} //var will make a variable global outside the scope
+// for (let i = 0; i < 5 i++) {} //var will make a variable global outside the scope
 
 // console.log(i) //index will log as 5
 
@@ -43,6 +43,7 @@ console.log('test')
 // }
 // console.log(y)
 
+//ternary operators
 //another way of writting conditional statements
 // let x = 5
 // let y = x ? true : false
@@ -71,7 +72,7 @@ console.log('test')
 // }
 
 // let ab = sum(2,4) //function return is asigning to a variable
-// console.log(ab);
+// console.log(ab)
 
 //can you call a function before it is defined? Yes, the engine reads the whole file, not line by line in python
 

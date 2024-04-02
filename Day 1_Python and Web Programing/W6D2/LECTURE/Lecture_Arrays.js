@@ -124,20 +124,20 @@ multiplyArray([1, 2, 3, 4])
 // // console.log(greaterThanThree(thisArr))
 
 // //SOLUTION which is the same as filter method
-// function filter(arr) {
-//   let newArr = []
-//   for (item of arr) {
-//     if (item > 3) newArr.push(item)
-//   }
-//   return newArr
-// }
-// console.log(filter(thisArr)) //[5,8]
+function filter(arr) {
+  let newArr = []
+  for (item of arr) {
+    if (item > 3) newArr.push(item)
+  }
+  return newArr
+}
+console.log(filter(thisArr)) //[5,8]
 
 //FILTER FUNCTION
 
-// let newArry = thisArr.filter((item) => {
-//   return item > 3
-// })
+let newArry = thisArr.filter((item) => {
+  return item > 3
+})
 
 // console.log(newArry);
 
@@ -189,12 +189,27 @@ console.log(reduce(thisarray))
 
 //USING BUILT IN REDUCE FUNCTION
 
-// let arrExample = [2, 5, 10, 100]
-// let sum = arrExample.reduce((total, item) => { //total is previous item total is new item
-//   return total + item
-// })
+let arrExample = [2, 5, 10, 100]
+let sum = arrExample.reduce((total, item) => { //total is previous item total is new item
+  return total + item
+})
 
-// console.log(sum);
+console.log(sum);
+
+
+let epic2 = ['Jeremy', 'learns', 'code']
+console.log(epic2.reduce(reducer, 'The story is '));
+let epicString = epic.reduce(reducer,'The story is ')
+
+console.log(epicString)
+
+
+let arrExample = [2, 5, 10, 100]
+let sum = arrExample.reduce((total, item) => { //total is previous item total is new item
+  return total + item
+},200)
+
+console.log(sum);
 
 //FIND METHOD
 
