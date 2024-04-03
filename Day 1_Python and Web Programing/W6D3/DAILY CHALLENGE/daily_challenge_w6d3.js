@@ -27,5 +27,16 @@ class Video {
 let aVideo = new Video('at the zoo', 'youtube founder', '12:00')
 let anotherVideo = new Video('Video 1', 'Jeremy Gross', '3oclock')
 console.log(aVideo.watch())
-
 console.log(anotherVideo.watch())
+
+let arr5Videos = [
+  { title: 'at the zoo', uploader: ' youtube founder', time: '12:00' },
+  { title: 'video 1', uploader: ' Jeremy', time: '3:00' },
+]
+let newArry = []
+arr5Videos.forEach((item) => {
+  let video = new Video(item.title, item.uploader, item.time) //item becomes each element of the object
+  newArry.push(video)
+})
+
+console.log(newArry[1].watch())

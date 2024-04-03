@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Get</h2>
+    <form method="GET" action="https://www.google.com/search">
+      <input name="q" />
+    </form>
+    <script src="Lecture_request.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Get All Users</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/users">
+      <input name="id" />
+      <!-- gets the id or name or whatever key in value in the json  -->
+      <input type="submit" value="Search JSON" />
+    </form>
+    <h2>Get Post</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/posts">
+      <input name="userId" />
+      <!-- gets the id or name or whatever key in value in the json  -->
+      <input type="submit" value="Search JSON" />
+    </form>
+
+    <h2>Contact Form</h2>
+    <form method="GET">
+      Name: <input name="username" /> <br />
+      Phone<input name="Phone" /> <br />
+      Messeage
+      <input name="Msg" /> <br />
+      <input type="submit" value="Send" />
+    </form>
+
+    <h2>Contact Form With Post</h2>
+    <form method="POST" action="https://users-18kl.onrender.com/user">
+      Input name: <input name="name" /> <br />
+      input email<input name="email" /> <br />
+      Input username
+      <input name="username" /> <br />
+      <input type="submit" value="Send" />
+    </form>
+
+    <h2>Get Post with Hidden</h2>
+    <form method="GET" action="https://jsonplaceholder.typicode.com/posts">
+      <input name="userId" />
+      <!-- gets the id or name or whatever key in value in the json  -->
+      <input type="submit" value="Search JSON" />
+      <input type="hidden" name="userId" value="6" />
+    </form>
+
+    <script src="Lecture_request.js"></script>
+  </body>
+</html>

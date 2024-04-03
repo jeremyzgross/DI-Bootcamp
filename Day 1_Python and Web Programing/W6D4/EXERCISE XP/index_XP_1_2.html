@@ -1,0 +1,41 @@
+<!-- EXERCISE XP 1,2 -->
+
+<!-- 1) Create a form like the one above. The form should contain three inputs:
+a small text input asking for a name,
+a larger textarea input to write a message,
+a submit input (“Send”)
+
+When you click the Send button, the form will be submitted with a GET method. (you can use the same HTML file for the action url)
+Where will the sent data appear? -->
+
+<!-- Answer: The data appears in the network tab under payload -->
+
+<!-- 2)Use the same form structure as Exercise 1.
+When you click the Send button, the form will be submitted with a POST method.(you can use the same HTML file for the action url)
+Where will the sent data appear?  -->
+
+<!-- Answer: it will apear in the network tab showing a post action -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XP</title>
+  </head>
+  <body>
+    <form method="POST" action="">
+      Name: <br />
+      <input name="name" /> <br />
+      Comments <br />
+      <input name="Comments" /> <br />
+
+      <br />
+      <input type="submit" value="Send" />
+    </form>
+    <script src="exercisexp_w6d4.js"></script>
+  </body>
+</html>
+
+
