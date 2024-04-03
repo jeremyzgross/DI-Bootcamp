@@ -140,7 +140,7 @@ const students = [
 
 students
   .filter((item) => {
-    return item.isPassed
+    return item.isPassed === true
   })
   .forEach((item) => {
     console.log(

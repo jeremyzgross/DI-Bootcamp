@@ -26,6 +26,6 @@ class Video {
 
 let aVideo = new Video('at the zoo', 'youtube founder', '12:00')
 let anotherVideo = new Video('Video 1', 'Jeremy Gross', '3oclock')
-console.log(aVideo.watch());
+console.log(aVideo.watch())
 
-console.log(anotherVideo.watch());
+console.log(anotherVideo.watch())
