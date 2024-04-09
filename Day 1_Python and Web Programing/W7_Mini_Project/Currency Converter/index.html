@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Currency Converter</h1>
+      <div class="conversion">
+        <div class="from">
+          <label for="currencyfromDropdown">Currency From:</label>
+          <select name="fromCurrency" id="fromCurrency">
+            <option value="USD">USD - United States Dollar</option>
+            <option value="ILS">ILS - Israeli New Shekel</option>
+            <option value="EUR">EUR - European Euro</option>
+            <option value="AUS">AUS - Australian Dollar</option>
+          </select>
+        </div>
+        <br />
+        <div class="to">
+          <label for="currencytoDropdown">Currency To:</label>
+          <select name="toCurrency" id="toCurrency">
+            <option value="USD">USD - United States Dollar</option>
+            <option value="ILS">ILS - Israeli New Shekel</option>
+            <option value="EUR">EUR - European Euro</option>
+            <option value="AUD">AUD - Australian Dollar</option>
+          </select>
+        </div>
+        <br />
+        <div class="amountContainer">
+          <div class="amount"></div>
+          <form id="convertForm">
+            <label for="inputValue">Enter Value:</label>
+            <!-- <input type="text" id="inputValue" name="inputValue" /> -->
+            <input name="CurrencyValue" placeholder="Currency Value" />
+            <button type="button" onclick="convert(event)">Convert</button>
+          </form>
+        </div>
+        <br />
+        <div class="resultContainer">
+          <div class="result">Result will be here</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="currency_script.js"></script>
+  </body>
+</html>
