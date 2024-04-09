@@ -1,5 +1,26 @@
-div,
-p {
-  /* border: solid #ff0000 1px; */
-  /* color: aliceblue; */
+body {
+  background-image: url(https://img.freepik.com/free-vector/violet-abstract-3d-big-data-visualization-with-dollar-symbol_1217-3347.jpg?w=2000&t=st=1712689216~exp=1712689816~hmac=955a11bc15d5fc118a93116f3d951dd0caa87f0b09721b61d8b2f0e8a39fb497);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 300px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  color: #33156e;
+  font-family: Arial, sans-serif;
+}
+
+.conversion {
+  border: solid white 4px;
+  padding: 40px; /* Add padding to create space within the div */
+  margin: 0px auto;
+  background-color: aliceblue;
+  max-width: 600px;
+}
+
+.headercontainer {
+  text-align: center; /* Center the content horizontally */
+  margin-bottom: 20px;
 }

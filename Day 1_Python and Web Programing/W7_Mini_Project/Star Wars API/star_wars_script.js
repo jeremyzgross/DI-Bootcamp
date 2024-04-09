@@ -1,6 +1,9 @@
 /*button event */
 const findSomeone = async (event) => {
   event.preventDefault()
+  document.getElementsByClassName('info')[0].style.display = 'none'
+  document.getElementsByClassName('loading')[0].style.display = 'flex'
+
   await getData()
 }
 
@@ -31,6 +34,8 @@ const getData = async () => {
     const homeworldData = await homeworldResolve.json()
     const homeworldName = homeworldData.result.properties.name
     //personData
+    document.getElementsByClassName('loading')[0].style.display = 'none'
+    document.getElementsByClassName('info')[0].style.display = 'block'
     displayData(
       personData.result.properties.name,
       personData.result.properties.height,
