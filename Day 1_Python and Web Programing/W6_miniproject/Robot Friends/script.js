@@ -87,7 +87,7 @@ const robots = [
 robots.forEach((item) => {
   const robotCard = document.createElement('li')
   robotCard.innerHTML = item.name + ' | ' + item.email + ' | ' + item.username
-  robotCard.ima
+  // robotCard.img
   robotCard.className = 'robotCard ' + item.id
 
   const image = document.createElement('img')
@@ -123,17 +123,22 @@ searchInput.addEventListener('input', function () {
   } else {
     // filter the items based on the search text
     robots.forEach((item) => {
-      const itemName = item.name.toLowerCase().split(' ')
-      const firstName = itemName[0]
-      const lastName = itemName[1]
+      // const itemName = item.name.toLowerCase().split(' ')
+      // const firstName = itemName[0]
+      // const lastName = itemName[1]
+      const name = item.name.toLowerCase().split(' ')
+      const nameOne = name[0]
+      const nameTwo = name[1]
+      const nameThree = name[2]
       const userName = item.username.toLowerCase()
       const email = item.email.toLowerCase()
 
       if (
-        firstName.toLowerCase().startsWith(searchText) ||
-        lastName.toLowerCase().startsWith(searchText) ||
-        userName.toLowerCase().startsWith(searchText) ||
-        email.toLowerCase().startsWith(searchText)
+        nameOne.startsWith(searchText) ||
+        nameTwo.startsWith(searchText) ||
+        (nameThree && nameThree.startsWith(searchText)) ||
+        userName.startsWith(searchText) ||
+        email.startsWith(searchText)
       ) {
         const robotCard = document.createElement('li')
         robotCard.innerHTML =

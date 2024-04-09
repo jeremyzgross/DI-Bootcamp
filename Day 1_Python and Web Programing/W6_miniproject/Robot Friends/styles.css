@@ -2,6 +2,10 @@ body {
   background-image: url(./ASSETS/card-pattern-background.png);
 }
 
+/* div {
+  border: solid #ff0000 4px;
+} */
+
 .headContainer {
   display: flex;
   background-color: #6adf82;
@@ -20,6 +24,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  
   /* padding: 0px 200px 0px 200px; */
 }
 

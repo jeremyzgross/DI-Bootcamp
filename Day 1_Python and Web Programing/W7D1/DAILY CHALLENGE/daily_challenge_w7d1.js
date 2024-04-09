@@ -18,48 +18,49 @@
 // //   })
 // // }*/
 
-// function makeAllCaps(arr) {
-//   return new Promise((resolve, reject) => {
-//     const capsArray = []
-//     for (let i = 0; i < arr.length; i++) {
-//       if (typeof arr[i] === 'string') {
-//         capsArray.push(arr[i].toUpperCase())
-//       } else {
-//         reject('not all strings')
-//         return
-//       }
-//     }
-//     resolve(capsArray)
-//   })
-// }
+function makeAllCaps(arr) {
+  return new Promise((resolve, reject) => {
+    const capsArray = []
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === 'string') {
+        capsArray.push(arr[i].toUpperCase())
+      } else {
+        reject('not all strings')
+        return
+      }
+    }
+    resolve(capsArray)
+  })
+}
 
-// function sortWords(arr) {
-//   return new Promise((resolve, reject) => {
-//     if (arr.length >= 4) {
-//       resolve(arr.sort())
-//     } else {
-//       reject('arr too short')
-//     }
-//   })
-// }
+function sortWords(arr) {
+  return new Promise((resolve, reject) => {
+    if (arr.length >= 4) {
+      resolve(arr.sort())
+    } else {
+      reject('arr too short')
+    }
+  })
+}
+
 
 // // //in this example, the catch method is executed
-// makeAllCaps([1, 'pear', 'banana'])
-//   .then((arr) => sortWords(arr))
-//   .then((result) => console.log(result))
-//   .catch((error) => console.log(error))
+makeAllCaps([1, 'pear', 'banana'])
+  .then((arr) => sortWords(arr))
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error))
 
-// //in this example, the catch method is executed
-// makeAllCaps(['apple', 'pear', 'banana'])
-//   .then((arr) => sortWords(arr))
-//   .then((result) => console.log(result))
-//   .catch((error) => console.log(error))
-// //in this example, you should see in the console,
-// // the array of words uppercased and sorted
-// makeAllCaps(['apple', 'pear', 'banana', 'melon', 'kiwi'])
-//   .then((arr) => sortWords(arr))
-//   .then((result) => console.log(result)) //["APPLE","BANANA", "KIWI", "MELON", "PEAR"]
-//   .catch((error) => console.log(error))
+//in this example, the catch method is executed
+makeAllCaps(['apple', 'pear', 'banana'])
+  .then((arr) => sortWords(arr))
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error))
+//in this example, you should see in the console,
+// the array of words uppercased and sorted
+makeAllCaps(['apple', 'pear', 'banana', 'melon', 'kiwi'])
+  .then((arr) => sortWords(arr))
+  .then((result) => console.log(result)) //["APPLE","BANANA", "KIWI", "MELON", "PEAR"]
+  .catch((error) => console.log(error))
 
 //part 2
 const morse = `{
@@ -109,31 +110,31 @@ const morse = `{
   "(": "-.--.",
   ")": "-.--.-"
 }`
+// //48:45
+// function toJS(morse) {
+//   return new Promise((resolve, reject) => {
+//     if (morse.length === 0) {
+//       reject('morse string is empty')
+//     } else {
+//       const morseObject = JSON.parse(morse)
+//       resolve(morseObject)
+//     }
+//   })
+// }
 
-function toJS(morse) {
-  return new Promise((resolve, reject) => {
-    if (morse.length === 0) {
-      reject('morse string is empty')
-    } else {
-      const morseObject = JSON.parse(morse)
-      resolve(morseObject)
-    }
-  })
-}
+// function toMorse(morseJS) {
+//   const word = prompt('Feed me a word: ')
+//   return new Promise((resolve, reject) => {
+//     const availibleLetters = Object.keys(morseJS)
+//     if (word.split('').some((letter) => !availibleLetters.includes(letter))){
+//       reject('please type lowercase')
+//     }else{
+//       resolve('Thank you')
+//     }
+//   })
+// }
 
-function toMorse(morseJS) {
-  const word = prompt('Feed me a word: ')
-  return new Promise((resolve, reject) => {
-    const availibleLetters = Object.keys(morseJS)
-    if (word.split('').some((letter) => !availibleLetters.includes(letter))){
-      reject('please type lowercase')
-    }else{
-      resolve('Thank you')
-    }
-  })
-}
-
-toJS(morse)
-  .then((morseObject) => toMorse(morseObject))
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error))
+// toJS(morse)
+//   .then((morseObject) => toMorse(morseObject))
+//   .then((result) => console.log(result))
+//   .catch((error) => console.log(error))
