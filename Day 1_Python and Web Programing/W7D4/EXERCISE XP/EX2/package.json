@@ -1,0 +1,12 @@
+{
+  "type":"module",
+  "name": "ex2",
+  "version": "1.0.0",
+  "description": "Exercise 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy",
+  "license": "ISC"
+}
