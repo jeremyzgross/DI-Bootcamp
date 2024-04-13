@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Guess Game</title>
+  </head>
+  <body>
+    <h1>Emoji Guess Game Index</h1>
+    <form>
+      <div id="randomEmoji">{{randomEmoji}}</div>
+      <input type="radio" id="Smile" name="emoji" value="Smile" />
+      <label for="Smile">Smile</label><br />
+      <input type="radio" id="Dog" name="emoji" value="Dog" />
+      <label for="Dog">Dog</label><br />
+      <input type="radio" id="Taco" name="emoji" value="Taco" />
+      <label for="Taco">Taco</label><br />
+      <br />
+      <button onclick="userGuess(event)">Guess</button>
+    </form>
+    <script src="play.js"></script>
+  </body>
+</html>
