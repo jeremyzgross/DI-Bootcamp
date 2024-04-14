@@ -1,14 +1,13 @@
 const userGuess = async (event) => {
-  if (event){}
   event.preventDefault()
-}
   const selectedEmoji = document.querySelector(
     'input[name="emoji"]:checked'
   ).value
 
   try {
     const response = await fetch('/emojis')
-    const randomEmoji = await response.text() 
+    const randomEmoji = await response.text()
+    console.log(randomEmoji)
 
     if (selectedEmoji === randomEmoji) {
       alert('Congratulations! Your guess is correct!')

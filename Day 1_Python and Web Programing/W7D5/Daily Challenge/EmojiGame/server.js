@@ -5,6 +5,8 @@ const app = express()
 
 const emojis = require('./emoji.js')
 
+const play = require('./play.js')
+
 const fs = require('fs')
 
 app.use('/', express.static(__dirname + '/EmojiGame'))
