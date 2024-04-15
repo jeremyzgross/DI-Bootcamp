@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors') //solve potential cors issues
 const { emojis } = require('./emojis')
-
 // console.log(emojis)
 const app = express()
 app.use(express.static(__dirname + '/public')) //makes path to static html files. FINDS INDEX.HTML BY DEFAULT
