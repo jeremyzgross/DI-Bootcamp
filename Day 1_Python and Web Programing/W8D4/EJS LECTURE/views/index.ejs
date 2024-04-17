@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('partial/header') %>
+    <h1>EJS is a cool template engine</h1>
+    Hi <%= locals.user.firstName %> <%= locals.user.lastName %> 
+    
+    <!-- if else INCOMPLETE -->
+<% if(locals.login){<%} %>
+
+    <%- include('partial/footer') %>
+  </body>
+</html>
