@@ -85,7 +85,6 @@ const _loginUser = async (userLogin) => {
     //knex returns first user and not array
 
     if (!user) {
-      // If no user found with the provided username, return null or throw an error
       throw new Error('User not found')
     }
 
@@ -93,7 +92,6 @@ const _loginUser = async (userLogin) => {
     const passwordMatch = await bcrypt.compare(password, user.password)
 
     if (!passwordMatch) {
-      // If passwords don't match, return null or throw an error
       throw new Error('Incorrect password')
     }
 

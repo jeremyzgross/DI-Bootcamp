@@ -1,16 +1,19 @@
+
 const express = require('express')
 const router = express.Router()
-
 const {
   registerUser,
   loginUser,
   budgetUser,
-} = require('../Controllers/controller.finance.js')
+} = require('../controllers/controller.finance.js')
 
+// Route for user registration
 router.post('/register', registerUser)
 
-router.get('/login', loginUser)
+// Route for user login
+router.post('/login', loginUser)
 
-router.get('/:id', budgetUser)
+// Route for fetching user's budget details
+router.get('/budget/:id', budgetUser)
 
 module.exports = router
