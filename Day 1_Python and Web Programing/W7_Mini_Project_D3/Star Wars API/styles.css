@@ -1,6 +1,6 @@
 div,
 p {
-  /* border: solid #ff0000 1px; */
+  border: solid red 1px;
   color: aliceblue;
 }
 

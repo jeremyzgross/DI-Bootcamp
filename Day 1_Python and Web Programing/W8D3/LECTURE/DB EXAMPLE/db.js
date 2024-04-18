@@ -219,6 +219,36 @@ const test = async () => {
 
 test()
 
+
+//more transaction test
+
+const express = require('express');
+const knex = require('knex');
+
+const app = express();
+
+// Initialize Knex.js with your database configuration
+const db = knex({
+  client: 'mysql', // or any other supported client
+  connection: {
+    host: 'your-database-host',
+    user: 'your-database-user',
+    password: 'your-database-password',
+    database: 'your-database-name'
+  }
+});
+
+
+// Other CRUD endpoints without transactions
+// ...
+
+// Start the server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
 //using cloud neon connection
 
 const db = knex({
