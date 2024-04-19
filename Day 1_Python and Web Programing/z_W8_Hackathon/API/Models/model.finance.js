@@ -1,4 +1,3 @@
-
 const bcrypt = require('bcrypt')
 const { db } = require('../config/config.finance.js')
 
@@ -41,7 +40,7 @@ const _registerUser = async (userData) => {
       currency,
     })
 
-    // Calculate and insert 50-30-20 into budget table 
+    // Calculate and insert 50-30-20 into budget table
     const totalIncome = monthly_income
     const necessities = totalIncome * 0.5
     const entertainment = totalIncome * 0.3
@@ -118,8 +117,41 @@ const _budgetUser = async (userId) => {
   }
 }
 
+const _updateIncome = async (userId, monthlyIncome) => {
+  let trx
+
+  try {
+    trx = await db.transaction()
+
+    await trx('income')
+      .where('user_id', userId)
+      .update({ monthly_income: monthlyIncome })
+
+    // Calculate and insert 50-30-20 into budget table
+
+    const totalIncome = monthlyIncome
+    const necessities = totalIncome * 0.5
+    const entertainment = totalIncome * 0.3
+    const savings = totalIncome * 0.2
+
+    await trx('budget').where('user_id', userId).update({
+      necessities_50: necessities,
+      entertainment_30: entertainment,
+      savings_20: savings,
+    })
+    await trx.commit()
+    return { message: 'Income updated successfully' }
+  } catch (error) {
+    if (trx) {
+      await trx.rollback()
+    }
+    throw error
+  }
+}
+
 module.exports = {
   _registerUser,
   _getUserByEmail,
   _budgetUser,
+  _updateIncome,
 }

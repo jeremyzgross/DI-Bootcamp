@@ -2,6 +2,7 @@ const {
   _registerUser,
   _getUserByEmail,
   _budgetUser,
+  _updateIncome,
 } = require('../models/model.finance.js')
 
 const registerUser = async (req, res) => {
@@ -39,8 +40,21 @@ const budgetUser = async (req, res) => {
   }
 }
 
+const updateIncome = async (req, res) => {
+  try {
+    const userID = req.params.id
+    const { monthly_income } = req.body
+    const income = await _updateIncome(userID, monthly_income)
+    res.json(income)
+  } catch (error) {
+    console.error('Error updating income:', error)
+    res.status(500).json({ error: 'Internal server error' })
+  }
+}
+
 module.exports = {
   registerUser,
   loginUser,
   budgetUser,
+  updateIncome,
 }

@@ -3,8 +3,10 @@ const express = require('express')
 const app = express()
 const postgres = require('postgres')
 const path = require('path')
+const cors = require('cors')
 
 //middleware
+app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', (request, response) => {
   response.sendFile(path.join(__dirname, '..', 'index.html'))
