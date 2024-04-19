@@ -1,3 +1,11 @@
+const registerBtn = document.getElementById('registerBtn')
+console.log(registerBtn)
+
+registerBtn.addEventListener("click",(event) => {
+  event.preventDefault()
+  window.location.href = './budget.html'
+})
+
 //fetching endpoints
 
 //testdata to send

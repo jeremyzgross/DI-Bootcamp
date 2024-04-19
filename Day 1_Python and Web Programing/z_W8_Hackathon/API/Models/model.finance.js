@@ -8,8 +8,8 @@ const _registerUser = async (userData) => {
     username,
     email,
     password,
-    monthly_income,
-    currency,
+    // monthly_income,
+    // currency,
   } = userData
 
   let trx
@@ -34,24 +34,24 @@ const _registerUser = async (userData) => {
       password: hashedPassword,
     })
 
-    await trx('income').insert({
-      user_id: user.id,
-      monthly_income,
-      currency,
-    })
+    // await trx('income').insert({
+    //   user_id: user.id,
+    //   monthly_income,
+    //   currency,
+    // })
 
     // Calculate and insert 50-30-20 into budget table
-    const totalIncome = monthly_income
-    const necessities = totalIncome * 0.5
-    const entertainment = totalIncome * 0.3
-    const savings = totalIncome * 0.2
+    // const totalIncome = monthly_income
+    // const necessities = totalIncome * 0.5
+    // const entertainment = totalIncome * 0.3
+    // const savings = totalIncome * 0.2
 
-    await trx('budget').insert({
-      user_id: user.id,
-      necessities_50: necessities,
-      entertainment_30: entertainment,
-      savings_20: savings,
-    })
+    // await trx('budget').insert({
+    //   user_id: user.id,
+    //   necessities_50: necessities,
+    //   entertainment_30: entertainment,
+    //   savings_20: savings,
+    // })
 
     await trx.commit()
 
@@ -64,6 +64,43 @@ const _registerUser = async (userData) => {
       await trx.rollback()
     }
     console.error('Error registering user:', error)
+    throw new Error('Internal Server Error')
+  }
+}
+
+const _userIncome = async (incomeData, userId, currency) => {
+  try {
+    trx = await db.transaction()
+
+    await trx('income').insert({
+      user_id: userId,
+      monthly_income: incomeData,
+      currency: currency,
+    })
+
+    // Calculate and insert 50-30-20 into budget table
+    const totalIncome = incomeData
+    const necessities = totalIncome * 0.5
+    const entertainment = totalIncome * 0.3
+    const savings = totalIncome * 0.2
+
+    await trx('budget').insert({
+      user_id: userId,
+      necessities_50: necessities,
+      entertainment_30: entertainment,
+      savings_20: savings,
+    })
+
+    await trx.commit()
+
+    return {
+      message: `User ${userId} income of ${totalIncome} was registered.`,
+    }
+  } catch (error) {
+    if (trx) {
+      await trx.rollback()
+    }
+    console.error('Error registering user income:', error)
     throw new Error('Internal Server Error')
   }
 }
@@ -151,6 +188,7 @@ const _updateIncome = async (userId, monthlyIncome) => {
 
 module.exports = {
   _registerUser,
+  _userIncome,
   _getUserByEmail,
   _budgetUser,
   _updateIncome,
