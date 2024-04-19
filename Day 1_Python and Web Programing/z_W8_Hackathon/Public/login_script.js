@@ -5,9 +5,6 @@ loginBtn.addEventListener('click', async (event) => {
   event.preventDefault()
   const usernameInput = document.getElementById('username').value
   const passwordInput = document.getElementById('password').value
-  // const data = await loginUser(usernameInput, passwordInput)
-  // window.localStorage.setItem('user', data)
-  // window.location.href = './budget.html'
   const data = await loginUser(usernameInput, passwordInput)
   console.log('User data:', data) // Log the data to verify it's not null or undefined
   window.sessionStorage.setItem('user', JSON.stringify(data)) // Ensure to stringify the data when setting in localStorage
