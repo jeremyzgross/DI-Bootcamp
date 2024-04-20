@@ -1,30 +1,75 @@
-window.sessionStorage.getItem('user')
-// console.log('from session sotrage');
-const userData = JSON.parse(sessionStorage.getItem('user'))
-const userId = userData.id
-console.log(userId)
-const incomeData = userData.monthly_income
-const currency = userData.currency
-console.log('User data from localStorage:', userData)
+// updateIncomeBtn.addEventListener('click', async (event) => {
+//   event.preventDefault()
 
-const updateIncomeBtn = document.getElementById('updateIncomeBtn')
+//   const incomeData = document.getElementById('monthlyIncome').value
+//   const currency = document.getElementById('currency').value
+//   const userData = JSON.parse(window.sessionStorage.getItem('user'))
+//   const userId = userData.id
+
+//   try {
+//     const data = await updateIncome(userId, incomeData, currency)
+//     console.log('User data:', data)
+
+//     // Update user data in session storage with the updated income and currency
+//     userData.monthly_income = incomeData
+//     userData.currency = currency
+//     window.sessionStorage.setItem('user', JSON.stringify(userData))
+
+//     // Navigate back to the budget.html page
+//     window.location.href = './budget.html'
+//   } catch (error) {
+//     console.error('Error updating income:', error)
+//   }
+// })
+
+// async function updateIncome(userId, monthly_income, currency) {
+//   const url = 'http://localhost:3001/finance/income'
+//   const options = {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       userId,
+//       monthly_income,
+//       currency,
+//     }),
+//   }
+
+//   try {
+//     const response = await fetch(url, options)
+//     const data = await response.json()
+//     return data
+//   } catch (error) {
+//     throw new Error('Failed to update income')
+//   }
+// }
 
 updateIncomeBtn.addEventListener('click', async (event) => {
   event.preventDefault()
-  const newIncome = document.getElementById('monthlyIncome').value
-  const newCurrency = document.getElementById('currency').value
 
-  const data = await updateIncome(userId, newIncome, newCurrency)
-  console.log('User data:', data)
+  const incomeData = document.getElementById('monthlyIncome').value
+  const currency = document.getElementById('currency').value
+  const userData = JSON.parse(window.sessionStorage.getItem('user'))
+  const userId = userData.id
 
-  // Update session storage with the updated user data
-  window.sessionStorage.setItem('user', JSON.stringify(data))
+  try {
+    const data = await updateIncome(userId, incomeData, currency)
+    console.log('User data:', data)
 
-  // Navigate to the budget.html page
-  window.location.href = './budget.html'
+    // Update user data in session storage with the updated income and currency
+    userData.monthly_income = incomeData
+    userData.currency = currency
+    window.sessionStorage.setItem('user', JSON.stringify(userData))
+
+    // Navigate back to the budget.html page
+    window.location.href = './budget.html'
+  } catch (error) {
+    console.error('Error updating income:', error)
+  }
 })
 
-async function updateIncome(userId, incomeData, currency) {
+async function updateIncome(userId, monthly_income, currency) {
   const url = 'http://localhost:3001/finance/income'
   const options = {
     method: 'PUT',
@@ -32,19 +77,17 @@ async function updateIncome(userId, incomeData, currency) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      // userId: userData.id,
-      // incomeData: incomeInput, //needs to be declared in dom
-      // currency: currencyInput,
       userId,
-      incomeData, //needs to be declared in dom
+      monthly_income,
       currency,
     }),
   }
+
   try {
-    const res = await fetch(url, options)
-    const data = await res.json()
+    const response = await fetch(url, options)
+    const data = await response.json()
     return data
   } catch (error) {
-    console.log(error)
+    throw new Error('Failed to update income')
   }
 }

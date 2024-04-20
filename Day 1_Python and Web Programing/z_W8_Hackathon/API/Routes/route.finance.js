@@ -18,7 +18,7 @@ router.post('/income', userIncome)
 router.post('/login', loginUser)
 
 // Route for fetching user's budget details
-router.get('/budget/:id', budgetUser)
+router.post('/budget', budgetUser)
 
 router.put('/income/', updateIncome)
 

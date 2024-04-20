@@ -44,7 +44,7 @@ const loginUser = async (req, res, next) => {
 
 const budgetUser = async (req, res, next) => {
   try {
-    const userId = req.params.id
+    const { userId } = req.body
     const userBudget = await _budgetUser(userId)
     res.json(userBudget)
   } catch (error) {

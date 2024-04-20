@@ -1,14 +1,23 @@
 const loginBtn = document.getElementById('loginBtn')
-console.log(loginBtn)
 
 loginBtn.addEventListener('click', async (event) => {
   event.preventDefault()
+
   const usernameInput = document.getElementById('username').value
   const passwordInput = document.getElementById('password').value
-  const data = await loginUser(usernameInput, passwordInput)
-  console.log('User data:', data) // Log the data to verify it's not null or undefined
-  window.sessionStorage.setItem('user', JSON.stringify(data)) // Ensure to stringify the data when setting in localStorage
-  window.location.href = './budget.html'
+
+  try {
+    const userData = await loginUser(usernameInput, passwordInput)
+    console.log('User data:', userData)
+
+    // Set user data in session storage
+    window.sessionStorage.setItem('user', JSON.stringify(userData))
+
+    // Navigate to the budget.html page
+    window.location.href = './budget.html'
+  } catch (error) {
+    console.error('Error logging in:', error)
+  }
 })
 
 async function loginUser(usernameInput, passwordInput) {
@@ -19,15 +28,16 @@ async function loginUser(usernameInput, passwordInput) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username: usernameInput, //needs to be declared in dom
+      username: usernameInput,
       password: passwordInput,
     }),
   }
+
   try {
-    const res = await fetch(url, options)
-    const data = await res.json()
+    const response = await fetch(url, options)
+    const data = await response.json()
     return data
   } catch (error) {
-    console.log(error)
+    throw new Error('Failed to log in')
   }
 }

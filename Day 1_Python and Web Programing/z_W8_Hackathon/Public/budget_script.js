@@ -1,29 +1,62 @@
-// console.log('from JSON');
-
-//LOGIN INFO
+// Retrieve user data from session storage
 window.sessionStorage.getItem('user')
-// console.log('from session sotrage');
 const userData = JSON.parse(sessionStorage.getItem('user'))
-console.log('User data from localStorage:', userData)
+const userToDisplay = userData.id
+//THIS IS 4
 
-document.getElementById(
-  'userName'
-).textContent = `${userData.first_name} ${userData.last_name}`
-document.getElementById(
-  'monthlyIncome'
-).textContent = `${userData.monthly_income} ${userData.currency}`
+//GET budget
+// Function to fetch budget data
+async function getBudgetData(userId) {
+  const url = 'http://localhost:3001/finance/budget'
 
-document.getElementById(
-  'necessitiesBudget'
-).textContent = `${userData.necessities_50} ${userData.currency}`
-document.getElementById(
-  'entertainmentBudget'
-).textContent = `${userData.entertainment_30} ${userData.currency}`
-document.getElementById(
-  'savingsBudget'
-).textContent = `${userData.savings_20} ${userData.currency}`
+  const options = {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      userId: userId, // or simply userId if key and value are same
+    }),
+  }
 
-//Update Income event listener
+  try {
+    const response = await fetch(url, options)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    // throw new Error('Failed to get budget data')
+    console.log(error)
+  }
+}
+
+async function updateDOMWithBudget(userToDisplay) {
+  try {
+    const budgetData = await getBudgetData(userToDisplay)
+    console.log('Budget data:', budgetData)
+
+    // Update DOM elements with budget data
+    document.getElementById(
+      'userName'
+    ).textContent = `${userData.first_name} ${userData.last_name}`
+    document.getElementById('monthlyIncome')
+    document.getElementById(
+      'monthlyIncome'
+    ).textContent = `${userData.monthly_income} ${userData.currency}`
+    document.getElementById(
+      'necessitiesBudget'
+    ).textContent = `${budgetData.necessities_50} ${budgetData.currency}`
+    document.getElementById(
+      'entertainmentBudget'
+    ).textContent = `${budgetData.entertainment_30} ${budgetData.currency}`
+    document.getElementById(
+      'savingsBudget'
+    ).textContent = `${budgetData.savings_20} ${budgetData.currency}`
+  } catch (error) {
+    console.error('Error updating DOM with budget data:', error)
+  }
+}
+
+updateDOMWithBudget(userToDisplay)
 
 const updateIncomeBtn = document.getElementById('updateIncomeBtn')
 

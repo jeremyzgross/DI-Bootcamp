@@ -146,9 +146,33 @@ const _getUserByEmail = async (userLogin) => {
   }
 }
 
+// const _budgetUser = async (userId) => {
+//   try {
+//     const userBudget = await db('budget').where('user_id', userId).first()
+
+//     if (!userBudget) {
+//       throw new Error('Budget not found')
+//     }
+
+//     return userBudget
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
 const _budgetUser = async (userId) => {
   try {
-    const userBudget = await db('budget').where('user_id', userId).first()
+    const userBudget = await db('budget')
+      .where('budget.user_id', userId)
+      .leftJoin('users', 'budget.user_id', 'users.id')
+      .leftJoin('income', 'income.user_id', 'users.id')
+      .select(
+        'budget.*',
+        'users.first_name',
+        'users.last_name',
+        'income.currency'
+      )
+      .first()
 
     if (!userBudget) {
       throw new Error('Budget not found')
@@ -159,6 +183,7 @@ const _budgetUser = async (userId) => {
     throw error
   }
 }
+
 
 const _updateIncome = async (userId, monthlyIncome, currency) => {
   let trx

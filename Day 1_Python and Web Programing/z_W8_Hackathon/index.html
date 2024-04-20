@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="welcomeHeader">
-      <h1>Welcome To Hack Planner - A Lightweight Budget Calculator</h1>
-    </div>
-    <a class="registerLink" href="./Public/register.html">Register</a>
-    <br />
-    <a class="loginLink" href="./Public/login.html">Login</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome To Hack Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
 
-    <script src=""></script>
-  </body>
+    .welcome-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #007bff; /* Blue text color */
+    }
+
+    .link {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff; /* Blue background */
+      color: #ffffff; /* White text color */
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .link:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>Welcome To Hack Planner - A Lightweight Budget Calculator</h1>
+    <a class="link" href="./Public/register.html">Register</a>
+    <a class="link" href="./Public/login.html">Login</a>
+  </div>
+  <script src=""></script>
+</body>
 </html>
