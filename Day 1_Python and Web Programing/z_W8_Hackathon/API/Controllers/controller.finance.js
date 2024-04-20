@@ -12,7 +12,8 @@ const registerUser = async (req, res, next) => {
     const result = await _registerUser(userData)
     // calculate  budget details after user registration
     // const budgetDetails = await _budgetUser(result.userId)
-    res.json({ message: result.message })
+    // res.json({ message: result.message, userId: result.userId })
+    res.json(result.user)
   } catch (error) {
     console.error('Error registering user', error)
     next(error)

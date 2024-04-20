@@ -17,6 +17,4 @@ document.getElementById('entertainmentBudget').textContent =
   userData.entertainment_30
 document.getElementById('savingsBudget').textContent = userData.savings_20
 
-
 //Update Income event
-
