@@ -12,7 +12,6 @@ app.get('/', (request, response) => {
   response.sendFile(path.join(__dirname, '..', 'index.html'))
 })
 
-
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 

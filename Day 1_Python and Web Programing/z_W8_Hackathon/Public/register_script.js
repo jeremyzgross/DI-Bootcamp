@@ -16,10 +16,9 @@ registerBtn.addEventListener('click', async (event) => {
     emailInput,
     passwordInput
   )
-  // console.log(data);
-  // console.log('User data:', data) // Log the data to verify it's not null or undefined
-  // window.sessionStorage.setItem('user', JSON.stringify(data)) // Ensure to stringify the data when setting in localStorage
-  // window.location.href = './income.html'
+  console.log('User data:', data) // Log the data to verify it's not null or undefined
+  window.sessionStorage.setItem('user', JSON.stringify(data)) // Ensure to stringify the data when setting in localStorage
+  window.location.href = './income.html'
 })
 
 //fetching endpoints
@@ -49,8 +48,6 @@ async function registerUser(
     const res = await fetch(url, options)
     const data = await res.json()
     console.log(data)
-    window.sessionStorage.setItem('user', JSON.stringify(data)) // Ensure to stringify the data when setting in localStorage
-    window.location.href = './income.html'
   } catch (error) {
     console.log(error)
   }
