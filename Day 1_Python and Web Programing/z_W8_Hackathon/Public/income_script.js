@@ -15,7 +15,7 @@ continueBtn.addEventListener('click', async (event) => {
   const data = await userIncome(userId, incomeData, currency)
   console.log('User data:', data) // Log the data to verify it's not null or undefined
   window.sessionStorage.setItem('user', JSON.stringify(data)) // Ensure to stringify the data when setting in localStorage
-  window.location.href = './budget.html'
+  window.location.href = './login.html'
 })
 
 async function userIncome(userId, incomeData, currency) {
