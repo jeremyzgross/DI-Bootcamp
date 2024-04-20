@@ -56,8 +56,9 @@ const _registerUser = async (userData) => {
     await trx.commit()
 
     return {
-      message: `User ${username} was registered with ID ${user.id}`,
-      userId: user.id,
+      // message: `User ${username} was registered with ID ${user.id}`,
+      // userId: user.id,
+      user,
     }
   } catch (error) {
     if (trx) {
@@ -113,13 +114,18 @@ const _getUserByEmail = async (userLogin) => {
         'users.id',
         'users.first_name',
         'users.last_name',
+        'users.username',
         'income.monthly_income',
         'income.currency',
-        'hashpwd.password'
+        'hashpwd.password',
+        'budget.necessities_50',
+        'budget.entertainment_30',
+        'budget.savings_20'
       )
       .where('users.username', username)
       .leftJoin('income', 'users.id', 'income.user_id')
       .leftJoin('hashpwd', 'users.id', 'hashpwd.user_id')
+      .leftJoin('budget', 'users.id', 'budget.user_id')
       .first()
 
     if (!user) {
