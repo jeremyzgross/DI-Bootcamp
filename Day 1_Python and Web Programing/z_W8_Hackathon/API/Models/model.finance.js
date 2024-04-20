@@ -160,7 +160,7 @@ const _budgetUser = async (userId) => {
   }
 }
 
-const _updateIncome = async (userId, monthlyIncome) => {
+const _updateIncome = async (userId, monthlyIncome, currency) => {
   let trx
 
   try {
@@ -168,7 +168,7 @@ const _updateIncome = async (userId, monthlyIncome) => {
 
     await trx('income')
       .where('user_id', userId)
-      .update({ monthly_income: monthlyIncome })
+      .update({ monthly_income: monthlyIncome, currency: currency })
 
     // Calculate and insert 50-30-20 into budget table
 

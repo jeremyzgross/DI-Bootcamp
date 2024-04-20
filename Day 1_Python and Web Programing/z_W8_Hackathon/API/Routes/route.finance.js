@@ -20,6 +20,6 @@ router.post('/login', loginUser)
 // Route for fetching user's budget details
 router.get('/budget/:id', budgetUser)
 
-router.put('/income/:id', updateIncome)
+router.put('/income/', updateIncome)
 
 module.exports = router

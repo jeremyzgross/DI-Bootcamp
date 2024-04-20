@@ -52,12 +52,10 @@ const budgetUser = async (req, res, next) => {
     next(error)
   }
 }
-
 const updateIncome = async (req, res, next) => {
   try {
-    const userID = req.params.id
-    const { monthly_income } = req.body
-    const income = await _updateIncome(userID, monthly_income)
+    const { userId, monthly_income, currency } = req.body
+    const income = await _updateIncome(userId, monthly_income, currency)
     res.json(income)
   } catch (error) {
     console.error('Error updating income:', error)
