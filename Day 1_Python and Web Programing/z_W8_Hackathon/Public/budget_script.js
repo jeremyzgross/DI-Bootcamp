@@ -2,7 +2,7 @@
 window.sessionStorage.getItem('user')
 const userData = JSON.parse(sessionStorage.getItem('user'))
 const userToDisplay = userData.id
-//THIS IS 4
+
 
 //GET budget
 // Function to fetch budget data

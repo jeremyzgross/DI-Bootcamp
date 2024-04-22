@@ -1,92 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Income Register</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income Register</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
 
-    .income-registration-container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
+      .income-registration-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
 
-    .income-registration-container h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #007bff; /* Blue text color */
-    }
+      .income-registration-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #007bff; /* Blue text color */
+      }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+      .form-group {
+        margin-bottom: 20px;
+      }
 
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
 
-    .form-group input[type="number"],
-    .form-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
+      .form-group input[type='number'],
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
 
-    .form-group button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff; /* Blue background */
-      color: #ffffff; /* White text color */
-      font-size: 16px;
-      cursor: pointer;
-    }
+      .form-group button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff; /* Blue background */
+        color: #ffffff; /* White text color */
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-    .form-group button:hover {
-      background-color: #0056b3; /* Darker blue on hover */
-    }
-  </style>
-</head>
-<body>
-  <div class="income-registration-container">
-    <h1>What is your monthly income?</h1>
-    <form action="" method="post">
-      <div class="form-group">
-        <label for="monthlyIncome">Monthly Income:</label>
-        <input
-          type="number"
-          id="monthlyIncome"
-          name="monthlyIncome"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="currency">Currency:</label>
-        <select id="currency" name="currency">
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="ILS">GBP</option>
-          <option value="AUD">JPY</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <button type="submit" id="continueBtn">Continue</button>
-      </div>
-    </form>
-  </div>
-  <script src="income_script.js"></script>
-</body>
+      .form-group button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="income-registration-container">
+      <h1>What is your monthly income? Please round to a whole number.</h1>
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="monthlyIncome">Monthly Income:</label>
+          <input
+            type="number"
+            id="monthlyIncome"
+            name="monthlyIncome"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="currency">Currency:</label>
+          <select id="currency" name="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="ILS">GBP</option>
+            <option value="AUD">JPY</option>
+            <option value="NIS">NIS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="continueBtn">Continue</button>
+        </div>
+      </form>
+    </div>
+    <script src="income_script.js"></script>
+  </body>
 </html>
