@@ -1,4 +1,4 @@
-const { _getAllBooks } = require('../Models/books.model')
+const { _getAllBooks, _getBook } = require('../Models/books.model')
 
 const getAllBooks = (req, res) => {
   _getAllBooks()
@@ -10,6 +10,17 @@ const getAllBooks = (req, res) => {
     })
 }
 
+const getBook = async (req, res) => {
+  try {
+    const bookId = req.params.id
+    const result = await _getBook(bookId)
+    res.json(result)
+  } catch (error) {
+    console.error('Error getting book with ID', error)
+    next(error)
+  }
+}
 module.exports = {
   getAllBooks,
+  getBook,
 }
