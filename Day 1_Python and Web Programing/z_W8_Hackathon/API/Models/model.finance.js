@@ -34,30 +34,9 @@ const _registerUser = async (userData) => {
       password: hashedPassword,
     })
 
-    // await trx('income').insert({
-    //   user_id: user.id,
-    //   monthly_income,
-    //   currency,
-    // })
-
-    // Calculate and insert 50-30-20 into budget table
-    // const totalIncome = monthly_income
-    // const necessities = totalIncome * 0.5
-    // const entertainment = totalIncome * 0.3
-    // const savings = totalIncome * 0.2
-
-    // await trx('budget').insert({
-    //   user_id: user.id,
-    //   necessities_50: necessities,
-    //   entertainment_30: entertainment,
-    //   savings_20: savings,
-    // })
-
     await trx.commit()
 
     return {
-      // message: `User ${username} was registered with ID ${user.id}`,
-      // userId: user.id,
       user,
     }
   } catch (error) {
@@ -146,19 +125,6 @@ const _getUserByEmail = async (userLogin) => {
   }
 }
 
-// const _budgetUser = async (userId) => {
-//   try {
-//     const userBudget = await db('budget').where('user_id', userId).first()
-
-//     if (!userBudget) {
-//       throw new Error('Budget not found')
-//     }
-
-//     return userBudget
-//   } catch (error) {
-//     throw error
-//   }
-// }
 
 const _budgetUser = async (userId) => {
   try {
@@ -183,7 +149,6 @@ const _budgetUser = async (userId) => {
     throw error
   }
 }
-
 
 const _updateIncome = async (userId, monthlyIncome, currency) => {
   let trx
