@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
       snippet: 'lorem ipsum',
     },
   ]
-  res.render('index', { title: 'Home', blogs: blogsArray })
+  res.render('index', { title: 'Home', blogs: blogs })
 })
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About' })

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./STYLES/index.css" />
+  </head>
+  <body>
+    <div class="welcome-container">
+      <h1>Login or Register to make an Order</h1>
+      <!-- <a class="link" href="./Public/register.html">Register</a>
+      <a class="link" href="./Public/login.html">Login</a> -->
+
+      <button class="registerbtn" onclick="displayRegisterForm(event)">
+        Register
+      </button>
+      <button class="loginbtn" onclick="displayLoginForm(event)">Login</button>
+
+      <div class="register-form-container">
+        <div class="register-container">
+          <h2>Registration Form</h2>
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="firstName">First Name:</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="form-group">
+              <label for="usernameregister">Username:</label>
+              <input
+                type="text"
+                id="usernameregister"
+                name="usernameregister"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="passwordregister">Password:</label>
+              <input
+                type="password"
+                id="passwordregister"
+                name="passwordregister"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <button type="submit" id="registerBtn">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="login-form-container">
+        <div class="login-container">
+          <h2>Login Form</h2>
+          <form action="" method="post">
+            <div class="form-group">
+              <label for="usernamelogin">Username:</label>
+              <input
+                type="text"
+                id="usernamelogin"
+                name="usernamelogin"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="passwordlogin">Password:</label>
+              <input
+                type="password"
+                id="passwordlogin"
+                name="passwordlogin"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <button id="loginBtn" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./JS/index.js"></script>
+  </body>
+</html>
