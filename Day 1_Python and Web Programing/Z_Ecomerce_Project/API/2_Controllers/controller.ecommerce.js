@@ -20,17 +20,6 @@ const registerUser = async (req, res, next) => {
   }
 }
 
-// const loginUser = async (req, res, next) => {
-//   try {
-//     const { username, password } = req.body
-//     const user = await _loginUser({ username, password })
-//     res.json(user)
-//   } catch (error) {
-//     console.error('Error logging in user:', error)
-//     next(error)
-//   }
-// }
-
 const loginUser = async (req, res, next) => {
   try {
     const { username, password } = req.body
@@ -78,20 +67,6 @@ const displayNonShipped = async (req, res, next) => {
   }
 }
 
-// const addOrder = async (req, res, next) => {
-//   try {
-//     // const { user_id } = req.body
-//     // const results = await _addOrder(user_id)
-//     // res.json(results)
-//     const user_id = req.params.id
-//     const results = await _addOrder(user_id)
-//     res.json({ id: results })
-//   } catch (error) {
-//     console.error('Error adding order:', error)
-//     next(error)
-//   }
-// }
-
 const addOrder = async (req, res, next) => {
   try {
     const user_id = req.params.id
@@ -105,8 +80,8 @@ const addOrder = async (req, res, next) => {
 
 const updateItemHasShipped = async (req, res, next) => {
   try {
-    const { order_id } = req.body
-    const results = await _itemShipped(order_id)
+    const { user_id } = req.body
+    const results = await _itemShipped(user_id)
     res.json(results)
   } catch (error) {
     console.error('Error updating order status:', error)

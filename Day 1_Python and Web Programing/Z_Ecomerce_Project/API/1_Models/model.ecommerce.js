@@ -131,10 +131,10 @@ const _addOrder = async (user_id) => {
   }
 }
 
-const _itemShipped = async (order_id) => {
+const _itemShipped = async (user_id) => {
   try {
     const updateOrderStatus = await db('orders')
-      .where({ id: order_id }) // find order_id in orders table and update the status of shipped to true meaning it has shipped. This will set off a trigger in the sql that is timestamped
+      .where({ user_id: user_id }) // find order_id in orders table and update the status of shipped to true meaning it has shipped. This will set off a trigger in the sql that is timestamped
       .update({ shipped: true })
     return updateOrderStatus
   } catch (error) {

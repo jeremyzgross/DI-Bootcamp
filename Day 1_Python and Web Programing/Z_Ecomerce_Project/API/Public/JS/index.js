@@ -14,8 +14,6 @@ const displayLoginForm = (event) => {
   loginFormDiv.style.display = 'block'
 }
 
-//Login User function and API post/
-
 //event handler for sumbit
 const loginBtn = document.getElementById('loginBtn')
 
@@ -37,27 +35,6 @@ loginBtn.addEventListener('click', async (event) => {
     console.error('Error logging in:', error)
   }
 })
-
-async function loginUser(usernameInputLogin, passwordInputLogin) {
-  const url = 'http://localhost:3001/api/login'
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      username: usernameInputLogin,
-      password: passwordInputLogin,
-    }),
-  }
-  try {
-    const response = await fetch(url, options)
-    const data = await response.json()
-    return data
-  } catch (error) {
-    throw new Error('Failed to log in')
-  }
-}
 
 //Register User function and API post/
 //Creating DOM elements
@@ -113,5 +90,25 @@ async function registerUser(
     return data
   } catch (error) {
     console.log(error)
+  }
+}
+async function loginUser(usernameInputLogin, passwordInputLogin) {
+  const url = 'http://localhost:3001/api/login'
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username: usernameInputLogin,
+      password: passwordInputLogin,
+    }),
+  }
+  try {
+    const response = await fetch(url, options)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    throw new Error('Failed to log in')
   }
 }

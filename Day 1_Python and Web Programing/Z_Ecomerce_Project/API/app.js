@@ -18,14 +18,14 @@
  * GET /products to show all products✅
  * create a button under each product that adds product to ORDER_INVETORY✅
  * if/else if there is an error because no order, alert the user to create order
- * else add item to ORDER_INVETORY use product_id, order_id from variable, save user_id from session
+ * else add item to ORDER_INVETORY use product_id, order_id from variable, save user_id from session✅
  */
 
 //ORDERS PAGE
 /**
- * on pageload GET/nonshippedorders
- * display the products in the order 
- * create checkoutbutton => PUT /orders
+ * on pageload GET/nonshippedorders✅
+ * display the products in the order ✅
+ * create checkoutbutton => PUT /orders✅
  * 
  * 
 
