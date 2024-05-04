@@ -1,0 +1,3 @@
+# Ignores the .vscode directory and all its contents
+.env      # Ignores the .env file
+app.js    # Ignores the app.js file
