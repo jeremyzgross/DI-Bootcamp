@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.carousel-root {
+  max-width: 50%;
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: auto;
+}
