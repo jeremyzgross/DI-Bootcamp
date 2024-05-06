@@ -4,11 +4,14 @@ import MyElement from './Components/MyElement'
 import Sum from './Components/Sum'
 import UserFavoriteAnimals from './Components/UserFavoriteAnimals'
 import Exercise from './Components/Exercise3'
+import Planets from './Components/Planets'
 const user = {
   firstName: 'Bob',
   lastName: 'Dylan',
   favAnimals: ['Horse', 'Turtle', 'Elephant', 'Monkey'],
 }
+
+const planets = ['Mars', 'Venus', 'Jupiter', 'Earth', 'Saturn', 'Neptune']
 
 function App() {
   return (
@@ -35,6 +38,7 @@ function App() {
         <h3>{user.lastName}</h3>
         <UserFavoriteAnimals favorites={user.favAnimals} />
         <Exercise />
+        <Planets myPlanets={planets} />
       </header>
     </div>
   )
