@@ -15,7 +15,7 @@ const App = () => {
     if (count === 0) {
       setCount(count + 100)
     }
-    return () => console.log('unmount') //component unmount
+    return () => console.log('unmount') //component
   }, [count]) //what components to listen for. In this case the count state changing
   const addOne = () => {
     setCount(count + 1)
