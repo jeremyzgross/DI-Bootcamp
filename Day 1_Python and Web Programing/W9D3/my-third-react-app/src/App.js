@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-// import Parent from './Components/Parent'
-// import Child from './Components/Child'
+import Parent from './Components/Parent'
+import Child from './Components/Child'
 import Counter from './Components/Counter'
 import ErrorBoundary from './Components/ErrorBoundary'
 
@@ -12,10 +12,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <h2>Parent & Child</h2>
+        <h2>Parent & Child</h2>
         <Parent auth="">
           <Child />
-  </Parent> */}
+  </Parent>
         <form onSubmit={handleSubmit}>
           <input type="submit" value="submit" />
         </form>

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <h1 style={{ color: 'red' }}>Simulation 1</h1>
+        <h1 style={{ color: 'red' }}>Simulation 1</h1>
 
         <ErrorBoundary>
           <BuggyCounter />
@@ -30,7 +30,7 @@ function App() {
           style={{ width: '100%', borderTop: '1px solid black', margin: 0 }}
         />
         <h1 style={{ color: 'red' }}>Simulation 3</h1>
-        <BuggyCounter /> */}
+        <BuggyCounter />
         {/* <ColorClass favcolor={'blue'} /> */}
         <Child />
       </header>
