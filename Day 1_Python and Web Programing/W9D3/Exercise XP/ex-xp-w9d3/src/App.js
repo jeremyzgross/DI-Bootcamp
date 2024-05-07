@@ -3,6 +3,8 @@
 import './App.css'
 import ErrorBoundary from './Components/ErrorBoundary'
 import BuggyCounter from './Components/BuggyCounter'
+import ColorClass from './Components/ColorsClass'
+import Child from './Components/Child'
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         />
         <h1 style={{ color: 'red' }}>Simulation 3</h1>
         <BuggyCounter /> */}
+        {/* <ColorClass favcolor={'blue'} /> */}
+        <Child />
       </header>
     </div>
   )
