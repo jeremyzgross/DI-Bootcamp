@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { auth } = require('../4_Middleware/middleware.ecommerce')
+// const { auth } = require('../4_Middleware/middleware.ecommerce')
 const {
   registerUser,
   loginUser,
@@ -14,7 +14,7 @@ const {
 
 router.post('/register', registerUser)
 router.post('/login', loginUser)
-router.post('/inventory', auth, addInvetory)
+router.post('/inventory', addInvetory)
 router.get('/inventory', displayInvetory)
 router.get('/orders/:id', displayNonShipped)
 router.post('/orders/:id', addOrder)

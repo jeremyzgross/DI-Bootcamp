@@ -6,16 +6,17 @@ const { logger } = require('./4_Middleware/middleware.ecommerce')
 //middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+const cors = require('cors')
 
 //router
 const ecommerce_router = require('./3_Routes/route.ecommerce')
 
 //use middleware
 app.use(logger)
+app.use(cors())
 
 //use router
 app.use('/', express.static(__dirname + '/Public'))
-
 
 app.use('/api', ecommerce_router)
 
