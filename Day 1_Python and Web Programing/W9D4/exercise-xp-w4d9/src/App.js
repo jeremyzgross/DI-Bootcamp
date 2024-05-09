@@ -1,16 +1,14 @@
 import './App.css'
+import React from 'react'
 import PostList from './Component/PostList'
 import Example1 from './Component/Example1'
 import Example2 from './Component/Example2'
 import Example3 from './Component/Example3'
-
-const dataToStringify = {
-  key1: 'myusername',
-  email: 'mymail@gmail.com',
-  name: 'Isaac',
-  lastname: 'Doe',
-  age: 27,
-}
+import Home from './Component/Home'
+import Profile from './Component/ProfileScreen'
+import Shop from './Component/Shop'
+import ErrorBoundary from './Component/ErrorBoundary'
+import { Routes, Route, NavLink } from 'react-router-dom'
 
 function App() {
   const postdataHandle = async () => {
@@ -39,6 +37,7 @@ function App() {
       throw error
     }
   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -50,6 +49,18 @@ function App() {
         <br />
         <Example3 /> */}
         {/* <button onClick={postdataHandle}>Press me to post some data</button> */}
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/shop">Shop</NavLink>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+
+          <Route
+            path="/shop"
+            element={<ErrorBoundary>{<Shop />} </ErrorBoundary>}
+          />
+        </Routes>
       </header>
     </div>
   )
