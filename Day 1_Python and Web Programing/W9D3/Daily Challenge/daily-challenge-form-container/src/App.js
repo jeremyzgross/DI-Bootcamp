@@ -10,7 +10,7 @@ function App() {
     setFormData(data)
   }
 
-  const [summary, setSummary] = useState()
+  const [summary, setSummary] = useState() 
 
   return (
     <div className="App">
