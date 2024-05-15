@@ -13,30 +13,40 @@ const initialState = {
 export const dayTasksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
-      const newtask = [...state.tasks]
-      newtask.push({
+      const newTask = {
         id: uuidv4(),
         task: action.payload.task,
         completed: false,
         date: action.payload.date,
-      })
-      
-      return { ...state, tasks: newtask }
+      }
+      return { ...state, tasks: [...state.tasks, newTask] }
 
     case COMPLETE_TASK:
-      const newtasks = state.tasks.map((item) => {
-        return item.id === action.payload
-          ? { ...item, completed: !item.completed }
-          : item
-      })
-      return { ...state, tasks: newtasks }
+      return {
+        ...state,
+        tasks: state.tasks.map((item) =>
+          item.id === action.payload
+            ? { ...item, completed: !item.completed }
+            : item
+        ),
+      }
 
     case REMOVE_TASK:
-      const notdeleted = state.tasks.filter((item) => item.id !== action.id)
-      return { ...state, tasks: notdeleted }
+      return {
+        ...state,
+        tasks: state.tasks.filter((item) => item.id !== action.id),
+      }
 
-    // case EDIT_TASK:
-    //   const
+    case EDIT_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, task: action.payload.task, date: action.payload.date }
+            : item
+        ),
+      }
+
     default:
       return state
   }
