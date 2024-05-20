@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Week2",
+			"path": "../../.."
+		},
+		{
+			"name": "day3",
+			"path": "../../../../../Downloads/day3"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Week2"
+	}
+}
