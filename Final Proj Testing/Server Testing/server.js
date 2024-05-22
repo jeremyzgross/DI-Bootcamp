@@ -1,9 +1,6 @@
 const express = require('express')
 const multer = require('multer')
-const path = require('path')
-const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
-
 const app = express()
 
 // Initialize multer for handling file uploads
@@ -13,7 +10,7 @@ const upload = multer({ dest: 'uploads/' })
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// Function to get video metadata
+// get video metadata
 const getVideoMetadata = (filePath) => {
   return new Promise((resolve, reject) => {
     ffmpeg.ffprobe(filePath, (err, metadata) => {
@@ -37,7 +34,7 @@ const getVideoMetadata = (filePath) => {
   })
 }
 
-// Function to get audio metadata
+// get audio metadata
 const getAudioMetadata = (filePath) => {
   return new Promise((resolve, reject) => {
     ffmpeg.ffprobe(filePath, (err, metadata) => {
